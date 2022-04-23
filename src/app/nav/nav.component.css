@@ -1,0 +1,68 @@
+.nav {
+    width: 100%;
+    display: flex;    
+    justify-content: space-between;
+    background-color: gray;
+    align-items: center;
+    padding: 10px;
+    min-height: 70px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.nav div {
+    height: max-content; 
+}
+
+.nav ul {   
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+.nav ul li {    
+    margin: 0 5px 0 5px; 
+}
+
+.nav li img {
+    height: 50px;
+    border-radius: 10px;
+}
+
+#logoAP {
+    object-fit: contain;    
+    height: 50px;
+}
+
+#menu{
+    display: none;
+}
+
+/* menu responsive style start */
+
+@media (max-width: 450px) {
+    #menu {
+        display: list-item;        
+    }
+    
+    .link {
+        display: none;
+    }  
+
+    .nav ul:hover {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        right: 10px;
+    }
+
+    .nav ul:hover > .link  {        
+       display: list-item;
+       margin: 5px;         
+    }
+}

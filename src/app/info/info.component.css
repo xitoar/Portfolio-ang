@@ -1,0 +1,29 @@
+/* info style start */
+
+.info {
+    padding: 10px;
+}
+
+.info ul {
+    margin: 0;
+}
+
+.info li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h2 {
+    margin: 15px;
+}
+
+#inti {
+    height: 30px;
+    margin-left: 20px;
+}
+
+#inac {
+    height: 30px;
+    margin-left: 20px;
+}
