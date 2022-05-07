@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { ConexionService } from '../service/conexion.service';
+import { DatosService } from '../service/datos.service';
 
 @Component({
   selector: 'app-resumen',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumenComponent implements OnInit {
 
-  constructor() { }
+  @Output() dataServ: any;
+
+  constructor(public conServ: ConexionService, public datos: DatosService) { }
 
   ngOnInit(): void {
+    this.conServ.getData().subscribe(data => {
+      this.dataServ = data;
+      this.datos.set(data);
+      console.log(data);
+    });
   }
 
 }

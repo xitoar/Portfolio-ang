@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DatosService } from '../service/datos.service';
 
 
 @Component({
@@ -8,11 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  @Input() dataServ: any = "dataServ";
+  dataServ: any;
 
-  constructor() { }
+  constructor(public datos: DatosService) { }
 
-  ngOnInit( ): void {
+  ngOnInit(): void {
+
+    this.dataServ = this.datos.get();
     
   }
 
