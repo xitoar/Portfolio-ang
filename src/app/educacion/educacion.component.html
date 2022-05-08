@@ -1,8 +1,8 @@
 <section> 
-    <div class="educacion" id="educacion" *ngIf="dataServ">
+    <div class="educacion" id="educacion" *ngIf="datos">
         <h2>Educación</h2>
         <ul>
-            <li *ngFor="let item of dataServ.educacion">
+            <li *ngFor="let item of datos.get().educacion">
                 <h3>{{item.titulo}}</h3>
                 <h4>{{item.subtitulo}}</h4>        
                 <p>{{item.comentario}}</p>

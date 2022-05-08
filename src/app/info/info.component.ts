@@ -8,15 +8,12 @@ import { DatosService } from '../service/datos.service';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
-
-  dataServ: any;
+  
 
   constructor(public datos: DatosService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-    this.dataServ = this.datos.get();
-    
-  }
+  
 
 }

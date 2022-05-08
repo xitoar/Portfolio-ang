@@ -17,7 +17,7 @@ export class ResumenComponent implements OnInit {
     this.conServ.getData().subscribe(data => {
       this.dataServ = data;
       this.datos.set(data);
-      console.log(data);
+      
     });
   }
 

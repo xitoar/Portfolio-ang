@@ -1,7 +1,7 @@
-<div class="info" *ngIf="dataServ != null">
-    <h1>{{dataServ.nombre}}</h1>
+<div class="info" *ngIf="datos">
+    <h1>{{datos.get().nombre}}</h1>
     <ul>
-        <li><h2>{{dataServ.educacion[0].titulo}}</h2><img id="inti" src="./assets/imagenes/LogosInti.png" alt="logoInti"></li>
-        <li><h2>{{dataServ.educacion[1].titulo}}</h2><img id="inac" src="./assets/imagenes/inaclogo.png" alt="logoInac"></li>
+        <li><h2>{{datos.get().educacion[0].titulo}}</h2><img id="inti" src="./assets/imagenes/LogosInti.png" alt="logoInti"></li>
+        <li><h2>{{datos.get().educacion[1].titulo}}</h2><img id="inac" src="./assets/imagenes/inaclogo.png" alt="logoInac"></li>
     </ul>
 </div>
