@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosService } from '../service/datos.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  login: string = "./assets/imagenes/Login-icon.png"
+  logout: string = "./assets/imagenes/Logout-icon.png"
+
+  constructor(public datos: DatosService) { }
+
+  deslogear(){
+    if(this.datos.login){
+    this.datos.login = false;
+    console.log(this.datos.login);
+    }
+  }
 
   ngOnInit(): void {
   }

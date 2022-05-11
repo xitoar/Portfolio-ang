@@ -14,5 +14,9 @@ export class ConexionService {
   getData(): Observable<any>{
     return this.http.get(this.apiDir+"info/1");     
   }
+
+  login(newLogin: any): Observable<any>{
+    return this.http.post(this.apiDir+"login", newLogin)
+  }
   
 }

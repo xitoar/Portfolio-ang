@@ -8,16 +8,13 @@ import { DatosService } from '../service/datos.service';
   styleUrls: ['./resumen.component.css']
 })
 export class ResumenComponent implements OnInit {
-
-  @Output() dataServ: any;
+ 
 
   constructor(public conServ: ConexionService, public datos: DatosService) { }
 
   ngOnInit(): void {
-    this.conServ.getData().subscribe(data => {
-      this.dataServ = data;
-      this.datos.set(data);
-      
+    this.conServ.getData().subscribe(data => {      
+      this.datos.set(data);      
     });
   }
 

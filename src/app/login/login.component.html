@@ -1,0 +1,17 @@
+<div class="container">    
+    <form [formGroup]="form">
+        <div class="mb-3">
+            <label for="usuario" class="form-label">Usuario:</label>
+            <input type="text" class="form-control" id="usuario" formControlName="usuario">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+        <div class="boton-cont">
+            <button type="submit" class="btn btn-primary" (click)="logear()">Logear</button>
+            <div class="boton-cnt"><a routerLink="/info" class="btn btn-danger">Volver</a></div>
+        </div>
+    </form>
+
+</div>

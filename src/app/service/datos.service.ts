@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { createFalse } from 'typescript';
 
 
 @Injectable({
@@ -7,6 +8,8 @@ import { Injectable } from '@angular/core';
 export class DatosService {
 
   datos: any;
+
+  login: boolean = false;
 
   constructor() { }
 
