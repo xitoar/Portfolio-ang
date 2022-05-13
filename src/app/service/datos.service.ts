@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { createFalse } from 'typescript';
+
 
 
 @Injectable({
@@ -9,16 +9,8 @@ export class DatosService {
 
   datos: any;
 
-  login: boolean = false;
+  login: boolean = true;
 
-  constructor() { }
-
-  set(datos: any){
-    this.datos = datos;
-  }
-
-  get(){
-    return this.datos;
-  }
+  constructor() {}
 
 }

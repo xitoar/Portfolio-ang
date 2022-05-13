@@ -19,13 +19,35 @@
     border-radius: 10px 10px 0 0;    
 }
 
+
 #foto {
-    object-fit: contain;
+    object-fit: contain;    
+    height: 100%;    
+    border-radius: 40%;
+    border: 5px solid gray;   
+}   
+#foto-cnt {
     position: absolute;
     height: 70%;    
     border-radius: 40%;
     left: 5%;
-    border: 5px solid gray;
+    display: flex;  
+}
+.icon-cnt{      
+    height: 10%;       
+}
+#sel-pic{
+    display: none;    
+}
+#lbl-icon{
+    height: 100%;
+}
+#icon{
+    cursor: pointer;     
+    height: 100%;
+    
 }
 
-/* fondo style end */
+
+
+

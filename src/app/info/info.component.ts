@@ -7,8 +7,7 @@ import { DatosService } from '../service/datos.service';
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.css']
 })
-export class InfoComponent implements OnInit {
-  
+export class InfoComponent implements OnInit {  
 
   constructor(public datos: DatosService) { }
 

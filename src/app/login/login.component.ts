@@ -11,8 +11,7 @@ import { DatosService } from '../service/datos.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form: FormGroup;
-  loginOk: boolean = false;
+  form: FormGroup;  
 
   constructor(private formBuilder: FormBuilder, private router: Router, private conServ: ConexionService, public datos: DatosService) {
 
@@ -24,8 +23,7 @@ export class LoginComponent implements OnInit {
 
   logear() {
     if (this.form.valid) {
-      this.conServ.login(this.form.value).subscribe(data => {
-        this.loginOk = data;
+      this.conServ.login(this.form.value).subscribe(data => {        
         this.datos.login = data;    
         if (data == true) {
           this.router.navigate(['/info']);
