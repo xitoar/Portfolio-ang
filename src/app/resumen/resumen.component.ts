@@ -9,8 +9,8 @@ import { DatosService } from '../service/datos.service';
 })
 export class ResumenComponent implements OnInit {
   
-  public archivo: any = "./assets/imagenes/foto_gris.png";
-  private reader = new FileReader;
+  archivo: any = "./assets/imagenes/foto_gris.png";
+  reader = new FileReader;
 
   constructor(public conServ: ConexionService, public datos: DatosService) { }
 
@@ -19,14 +19,16 @@ export class ResumenComponent implements OnInit {
     this.reader.readAsDataURL(archivoCapturado);
     this.reader.onloadend = () => {
       this.archivo = this.reader.result;
-      console.log(this.archivo);
+      this.datos.datos.imagen = this.reader.result;
+      console.log(this.datos.datos);
     }    
   }
 
   ngOnInit(): void {
     this.conServ.getData().subscribe(data => {      
-      this.datos.datos = data;      
-    });
+      this.datos.datos = data;
+      this.archivo = data.imagen;      
+    });    
   }
 
 }

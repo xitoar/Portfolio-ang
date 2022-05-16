@@ -14,6 +14,24 @@
     flex-wrap: wrap;
 }
 
+.h1-cnt{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+#btn-icon {
+    height: 100%;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    margin-left: 20px;    
+}
+
+#icon {
+    height: 50%;
+    
+}
+
 h2 {
     margin: 15px;
 }

@@ -16,7 +16,12 @@ export class ConexionService {
   }
 
   login(newLogin: any): Observable<any>{
-    return this.http.post(this.apiDir+"login", newLogin)
+    return this.http.post(this.apiDir+"login", newLogin);
   }
+  nuevaEdu(edu: any): Observable<any>{  
+    return this.http.post(this.apiDir+"nuevo/educacion", edu);
+  
+}
+
   
 }

@@ -1,12 +1,22 @@
-<section> 
+<section>
     <div class="educacion" id="educacion" *ngIf="datos">
-        <h2>Educación</h2>
+        <div class="h3-cnt">
+            <h2>Educación</h2>
+            <button id="btn-icon" (click)="nuevo()">
+                <img src="./assets/imagenes/Edit_icon_b.png" id="icon" alt="save">
+            </button>
+        </div>
         <ul>
-            <li *ngFor="let item of datos.datos.educacion">
-                <h3>{{item.titulo}}</h3>
-                <h4>{{item.subtitulo}}</h4>        
-                <p>{{item.comentario}}</p>
+            <li *ngFor="let item of datos.datos.educacion; let indice=index">
+                <div class="h3-cnt">
+                    <h3 [contentEditable]="datos.login" #dato1>{{item.titulo}}</h3>
+                    <button id="btn-icon" (click)="guardar(indice)">
+                        <img src="./assets/imagenes/Edit_icon_b.png" id="icon" alt="save">
+                    </button>
+                </div>
+                <h4 #dato2 [contentEditable]="datos.login">{{item.subtitulo}}</h4>
+                <p #dato3 [contentEditable]="datos.login">{{item.comentario}}</p>
             </li>
-        </ul>        
+        </ul>
     </div>
 </section>

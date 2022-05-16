@@ -14,6 +14,7 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LoginComponent } from './login/login.component';
+import { BotonGuardarComponent } from './boton-guardar/boton-guardar.component';
 
 
 
@@ -28,7 +29,8 @@ import { LoginComponent } from './login/login.component';
     ExperienciaComponent,
     ProyectosComponent,
     ContactoComponent,
-    LoginComponent    
+    LoginComponent,
+    BotonGuardarComponent    
   ],
   imports: [
     BrowserModule,
