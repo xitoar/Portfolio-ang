@@ -9,32 +9,64 @@ import { ConexionService } from '../service/conexion.service';
 })
 export class EducacionComponent implements OnInit {
 
+  archivo: any = "./assets/imagenes/escudo.jpg";
+  reader = new FileReader;
+  nuevaImg: boolean = false;
+
   @ViewChildren("dato1") dato1: QueryList<ElementRef>;
   @ViewChildren("dato2") dato2: QueryList<ElementRef>;
   @ViewChildren("dato3") dato3: QueryList<ElementRef>;
   
-  persona = { id : ""};
-  edu = { id: "", titulo: "", subtitulo: "", comentario: "", persona: {} };
+  personaId = { id : ""};
+  edu = { id: "", titulo: "Ingrese nuevo titulo", subtitulo: "Ingrese nombre institución", comentario: "Ingrese comentarios adicionales", persona: {} };
 
   constructor(public datos: DatosService, public conServ: ConexionService) { }
-
-  guardar(item: any) {
-    this.datos.datos.educacion[item].titulo = this.dato1.get(item)?.nativeElement.textContent;
-    this.datos.datos.educacion[item].subtitulo = this.dato2.get(item)?.nativeElement.textContent;
-    this.datos.datos.educacion[item].comentario = this.dato3.get(item)?.nativeElement.textContent;
-    this.persona.id = this.datos.datos.id;
-    this.datos.datos.educacion[item].persona = this.persona;  
-    this.conServ.nuevaEdu(this.datos.datos.educacion[item]).subscribe(data => {
+  
+  nuevo() {   
+    this.personaId.id = this.datos.datos.id;
+    this.edu.persona = this.personaId;
+    this.conServ.nuevaEdu(this.edu).subscribe(data => {
       this.datos.datos.educacion = data;      
     });
   }
 
-  nuevo() {   
-    this.persona.id = this.datos.datos.id;
-    this.conServ.nuevaEdu(this.edu).subscribe(data => {
+  guardar(item: any) {
+    this.personaId.id = this.datos.datos.id;
+    this.datos.datos.educacion[item].persona = this.personaId;
+    this.datos.datos.educacion[item].titulo = this.dato1.get(item)?.nativeElement.textContent;
+    this.datos.datos.educacion[item].subtitulo = this.dato2.get(item)?.nativeElement.textContent;
+    this.datos.datos.educacion[item].comentario = this.dato3.get(item)?.nativeElement.textContent;     
+    this.conServ.nuevaEdu(this.datos.datos.educacion[item]).subscribe(data => {
       this.datos.datos.educacion = data;
-      console.log(data);
+      alert("Sus datos fueron guardados en la base de datos");      
     });
+  } 
+
+  borrar(item: any){
+    this.conServ.borrarEdu(this.datos.datos.educacion[item].id).subscribe(data => {
+      this.datos.datos.educacion = data;
+    });
+  }
+
+  capturarFile(event: any, item: any){
+    const archivoCapturado = event.target.files[0];
+    this.reader.readAsDataURL(archivoCapturado);
+    this.reader.onloadend = () => {      
+      this.datos.datos.educacion[item].imagen = this.reader.result;      
+      this.nuevaImg = true;      
+    }    
+  }  
+
+  guardarImg(item: any){
+    if(this.nuevaImg){
+      this.personaId.id = this.datos.datos.id;
+      this.datos.datos.educacion[item].persona = this.personaId;
+      this.conServ.nuevaEdu(this.datos.datos.educacion[item]).subscribe(data => {
+        alert("Sus datos fueron guardados en la base de datos");            
+      })
+    } else {
+      alert("No cargo foto nueva");
+    }
   }
 
   ngOnInit(): void { }

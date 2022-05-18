@@ -11,6 +11,7 @@ export class ResumenComponent implements OnInit {
   
   archivo: any = "./assets/imagenes/foto_gris.png";
   reader = new FileReader;
+  nuevaImg: boolean = false;
 
   constructor(public conServ: ConexionService, public datos: DatosService) { }
 
@@ -20,14 +21,28 @@ export class ResumenComponent implements OnInit {
     this.reader.onloadend = () => {
       this.archivo = this.reader.result;
       this.datos.datos.imagen = this.reader.result;
-      console.log(this.datos.datos);
+      this.nuevaImg = true;      
     }    
+  }
+  guardar(){
+    if(this.nuevaImg){
+      this.conServ.guardarCambios(this.datos.datos).subscribe(data => {
+        alert("Sus datos fueron guardados en la base de datos");     
+      })
+    } else {
+      alert("No cargo foto nueva");
+    }
   }
 
   ngOnInit(): void {
     this.conServ.getData().subscribe(data => {      
       this.datos.datos = data;
-      this.archivo = data.imagen;      
+      this.archivo = data.imagen; 
+      const personaId = {id:""};
+      personaId.id = data.id 
+      for(let edu of this.datos.datos.educacion){
+        edu.persona = personaId;        
+      }               
     });    
   }
 

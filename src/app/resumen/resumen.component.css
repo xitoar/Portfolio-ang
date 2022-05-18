@@ -34,7 +34,7 @@
     display: flex;  
 }
 .icon-cnt{      
-    height: 10%;       
+    height: 20%;       
 }
 #sel-pic{
     display: none;    
@@ -45,6 +45,18 @@
 #icon{
     cursor: pointer;     
     height: 100%;
+    
+}
+#btn-icon {
+    height: 100%;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    margin-left: 20px;    
+}
+
+#icon {
+    height: 50%;
     
 }
 

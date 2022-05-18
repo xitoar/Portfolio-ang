@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
 }
+
 #btn-icon {
     height: 100%;
     padding: 0;
@@ -28,15 +29,14 @@
 }
 
 #icon {
-    height: 50%;
-    
+    height: 50%;    
 }
 
 h2 {
     margin: 15px;
 }
 
-#inti {
+.img-edu {
     height: 30px;
     margin-left: 20px;
 }
@@ -44,4 +44,14 @@ h2 {
 #inac {
     height: 30px;
     margin-left: 20px;
+}
+#editOk{
+    padding: 5px;
+    border: 2px dashed black;
+    background-color: rgb(192, 182, 182);
+    border-radius: 5px;
+    font-style: oblique;
+}
+h1{
+    margin: 0;
 }

@@ -19,9 +19,14 @@ export class ConexionService {
     return this.http.post(this.apiDir+"login", newLogin);
   }
   nuevaEdu(edu: any): Observable<any>{  
-    return this.http.post(this.apiDir+"nuevo/educacion", edu);
-  
-}
+    return this.http.post(this.apiDir+"nuevo/educacion", edu);  
+  }
+  guardarCambios(perso: any): Observable<any>{  
+    return this.http.post(this.apiDir+"nuevo", perso);  
+  }
 
+  borrarEdu(id: any): Observable<any>{
+    return this.http.get(this.apiDir+"borrarEdu/"+ id);
+  }
   
 }

@@ -7,7 +7,12 @@ import { Injectable } from '@angular/core';
 })
 export class DatosService {
 
-  datos: any = null;
+   
+
+  datos: any;
+
+ 
+
 
   login: boolean = true;
 

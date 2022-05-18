@@ -11,7 +11,7 @@ export class InfoComponent implements OnInit {
   
   @ViewChild ("dato") dato: ElementRef;  
 
-  constructor(public datos: DatosService) { }
+  constructor(public datos: DatosService) { } 
 
   guardar(){    
     this.datos.datos.nombre = this.dato.nativeElement.textContent;    
