@@ -2,7 +2,7 @@
     <div class="educacion" *ngIf="datos.datos">
         <div class="h3-cnt">
             <h2>Educación</h2>
-            <button class="btn-icon" (click)="nuevo()">
+            <button class="btn-icon" (click)="nuevo()" *ngIf="datos.login">
                 <img src="./assets/imagenes/Edit.png" class="icon" alt="save">
             </button>
         </div>
@@ -10,22 +10,22 @@
             <li *ngFor="let item of datos.datos.educacion; let indice=index">
                 <div class="h3-cnt">
                     <h3 [contentEditable]="datos.login" #dato1>{{item.titulo}}</h3>
-                    <button class="btn-icon" (click)="guardar(indice)">
+                    <button class="btn-icon" (click)="guardar(indice)" *ngIf="datos.login">
                         <img src="./assets/imagenes/save.png" class="icon" alt="save">
                     </button>
-                    <button class="btn-icon" (click)="borrar(indice)">
+                    <button class="btn-icon" (click)="borrar(indice)" *ngIf="datos.login">
                         <img src="./assets/imagenes/del.png" class="icon" alt="borrar">
                     </button>
                 </div>
                 <div class="img-cnt">
                     <img class="img-edu" src={{item.imagen}} alt="logo" *ngIf="item.imagen; else elseBlock">
                     <ng-template #elseBlock><img class="img-edu" src={{archivo}} alt="logo"></ng-template>
-                    <label for={{item.id}} id="lbl-icon">
+                    <label for={{item.id}} id="lbl-icon" *ngIf="datos.login">
                         <img src="./assets/imagenes/Edit.png" id="iconF" alt="icon select file">
                     </label>
                     <input class="sel-pic" type="file" id={{item.id}} (change)="capturarFile($event, indice)"
                         accept=".png, .jpg">
-                    <button class="btn-icon" (click)="guardarImg(indice)">
+                    <button class="btn-icon" (click)="guardarImg(indice)" *ngIf="datos.login">
                         <img src="./assets/imagenes/save.png" class="icon" alt="guardarImg">
                     </button>
                 </div>

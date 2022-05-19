@@ -1,16 +1,13 @@
 <div class="info" *ngIf="datos.datos">
     <div class="h1-cnt">
-        <div id="editOk" *ngIf="datos.login">
-            <h1 contentEditable={{datos.login}} #dato>{{datos.datos.nombre}}</h1>
-        </div>
-        <button id="btn-icon" (click)="guardar()">
+        <h1 contentEditable={{datos.login}} #dato>{{datos.datos.nombre}}</h1>
+        <button id="btn-icon" (click)="guardar()" *ngIf="datos.login">
             <img src="./assets/imagenes/save.png" id="icon" alt="save">
         </button>
     </div>
     <ul>
         <li *ngFor="let item of datos.datos.educacion">
-            <h2>{{item.titulo}}</h2><img class="img-edu" src={{item.imagen}}
-                alt="logo">
-        </li>       
+            <h2>{{item.titulo}}</h2><img class="img-edu" src={{item.imagen}} alt="logo">
+        </li>
     </ul>
 </div>
