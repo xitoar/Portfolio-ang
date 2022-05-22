@@ -1,6 +1,26 @@
 <section>
-    <div class="proyectos" id="proyectos">
-        <h2>Proyectos</h2>
-        <p>Actualmente solo poseo el desarrollo de este portfolio.</p>
+    <div class="proyectos" *ngIf="datos.datos">
+        <div class="h3-cnt">
+            <h2>Proyectos</h2>
+            <button class="btn-icon" (click)="nuevo()" *ngIf="datos.login">
+                <img src="./assets/imagenes/Edit.png" class="icon" alt="save">
+            </button>
+        </div>
+        <ul>
+            <li *ngFor="let item of datos.datos.proyectos; let indice=index">
+                <div class="h3-cnt">
+                    <h3 [contentEditable]="datos.login" #dato1>{{item.titulo}}</h3>
+                    <button class="btn-icon" (click)="guardar(indice)" *ngIf="datos.login">
+                        <img src="./assets/imagenes/save.png" class="icon" alt="save">
+                    </button>
+                    <button class="btn-icon" (click)="borrar(indice)" *ngIf="datos.login">
+                        <img src="./assets/imagenes/del.png" class="icon" alt="borrar">
+                    </button>
+                </div>
+                <div class="p-cnt">
+                    <p #dato3 [contentEditable]="datos.login">{{item.comentario}}</p>
+                </div>
+            </li>
+        </ul>        
     </div>
 </section>

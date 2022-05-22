@@ -1,7 +1,12 @@
 /* info style start */
-
+section {
+    height: 50%;
+}
 .info {
-    padding: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;   
 }
 
 .info ul {

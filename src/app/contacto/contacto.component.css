@@ -8,3 +8,27 @@ section {
     overflow-y: auto;
     
 }
+.li-cnt {
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    flex-wrap: wrap;
+}
+li{
+    display: flex;
+    align-items: center;
+}
+.btn-icon {
+    height: 50px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    margin-left: 20px;    
+}
+.icon {
+    height: 50%;    
+}
+p{
+    margin-bottom: 0;
+    margin-left: 10px;
+}

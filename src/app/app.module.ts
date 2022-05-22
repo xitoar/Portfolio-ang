@@ -14,7 +14,7 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LoginComponent } from './login/login.component';
-import { BotonGuardarComponent } from './boton-guardar/boton-guardar.component';
+
 
 
 
@@ -29,8 +29,7 @@ import { BotonGuardarComponent } from './boton-guardar/boton-guardar.component';
     ExperienciaComponent,
     ProyectosComponent,
     ContactoComponent,
-    LoginComponent,
-    BotonGuardarComponent    
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +37,7 @@ import { BotonGuardarComponent } from './boton-guardar/boton-guardar.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

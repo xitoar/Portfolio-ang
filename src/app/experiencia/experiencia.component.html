@@ -1,10 +1,26 @@
 <section>
-    <div class="experiencias" id="experiencias">
-        <h2>Experiencias</h2>
-        <h3>Programación Web</h3>
-        <p>Programacion completa de mi Portfolio.</p>
-        <h3>Técnico</h3>
-        <p>15 años de experiencia trabajando en mantenimiento en Toyota Argentina. Realizaba tanto tareas básicas como pueden ser la lubricaión y ajustes mecánicos, como tareas mas complejas como la programación de PLC, o el teaching de robots. Tambien trabaja en la busqueda de fallas y aplicación de mejoras. Por la parte de géstion, trabaje en los 3 pilares de la organización del sector. Plan de Mantenimiento, capacitación del personal, y gestión de los repuestos.
-        </p>        
+    <div class="experiencia">
+        <div class="h3-cnt">
+            <h2>Experiencias</h2>
+            <button class="btn-icon" (click)="nuevo()" *ngIf="datos.login">
+                <img src="./assets/imagenes/Edit.png" class="icon" alt="save">
+            </button>
+        </div>
+        <ul>
+            <li *ngFor="let item of datos.datos.experiencia; let indice=index">
+                <div class="h3-cnt">
+                    <h3 [contentEditable]="datos.login" #dato1>{{item.tarea}}</h3>
+                    <button class="btn-icon" (click)="guardar(indice)" *ngIf="datos.login">
+                        <img src="./assets/imagenes/save.png" class="icon" alt="save">
+                    </button>
+                    <button class="btn-icon" (click)="borrar(indice)" *ngIf="datos.login">
+                        <img src="./assets/imagenes/del.png" class="icon" alt="borrar">
+                    </button>
+                </div>
+                <div class="p-cnt">
+                    <p #dato3 [contentEditable]="datos.login">{{item.comentario}}</p>
+                </div>
+            </li>
+        </ul>       
     </div>
 </section>
