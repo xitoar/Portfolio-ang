@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class ConexionService {
 
-  apiDir: string = "http://localhost:8080/";
+  apiDir: string = "https://helios-portfolio-backend.herokuapp.com/";
 
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.http.get(this.apiDir + "info/2");
+    return this.http.get(this.apiDir + "info/1");
   }
 
   login(newLogin: any): Observable<any> {
