@@ -26,9 +26,7 @@ export class ProyectosComponent implements OnInit {
     });    
   }
 
-  guardar(item: any) {
-    this.personaId.id = this.datos.datos.id;
-    this.datos.datos.proyectos[item].persona = this.personaId;
+  guardar(item: any) {    
     this.datos.datos.proyectos[item].titulo = this.dato1.get(item)?.nativeElement.textContent;    
     this.datos.datos.proyectos[item].comentario = this.dato3.get(item)?.nativeElement.textContent;     
     this.conServ.nuevoProy(this.datos.datos.proyectos[item]).subscribe(data => {

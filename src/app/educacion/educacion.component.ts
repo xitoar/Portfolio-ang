@@ -30,9 +30,7 @@ export class EducacionComponent implements OnInit {
     });
   }
 
-  guardar(item: any) {
-    this.personaId.id = this.datos.datos.id;
-    this.datos.datos.educacion[item].persona = this.personaId;  
+  guardar(item: any) {    
     this.datos.datos.educacion[item].titulo = this.dato1.get(item)?.nativeElement.textContent;
     this.datos.datos.educacion[item].subtitulo = this.dato2.get(item)?.nativeElement.textContent;
     this.datos.datos.educacion[item].comentario = this.dato3.get(item)?.nativeElement.textContent;     

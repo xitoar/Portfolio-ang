@@ -11,8 +11,7 @@ import { DatosService } from '../service/datos.service';
 export class InfoComponent implements OnInit {
 
   @ViewChild("dato") dato: ElementRef;
-
-  personaId = { id : ""};
+  
 
   constructor(public datos: DatosService, public conServ: ConexionService) { }
 

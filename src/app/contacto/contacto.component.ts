@@ -23,8 +23,7 @@ export class ContactoComponent implements OnInit {
     this.conServ.guardarCambios(this.datos.datos).subscribe(data => {
       alert("Sus datos fueron guardados en la base de datos");     
     })   
-    
-    console.log(this.datos.datos);
+   
   }
 
   ngOnInit(): void {

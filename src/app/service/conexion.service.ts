@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class ConexionService {
 
   apiDir: string = "https://helios-portfolio-backend.herokuapp.com/";
+  
+
 
   constructor(private http: HttpClient) { }
 

@@ -27,9 +27,7 @@ export class ExperienciaComponent implements OnInit {
     });
   }
 
-  guardar(item: any) {
-    this.personaId.id = this.datos.datos.id;
-    this.datos.datos.experiencia[item].persona = this.personaId;     
+  guardar(item: any) {       
     this.datos.datos.experiencia[item].tarea = this.dato1.get(item)?.nativeElement.textContent;
     this.datos.datos.experiencia[item].comentario = this.dato3.get(item)?.nativeElement.textContent;
     this.conServ.nuevaExp(this.datos.datos.experiencia[item]).subscribe(data => {
