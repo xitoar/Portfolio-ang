@@ -7,15 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class ConexionService {
 
- // apiDir: string = "https://helios-portfolio-backend.herokuapp.com/";
-  apiDir: string = "http://localhost:8080/";
-  
+  apiDir: string = "https://helios-portfolio-backend.herokuapp.com/";
+  //apiDir: string = "http://localhost:8080/";
+
 
 
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.http.get(this.apiDir + "info/2");
+    return this.http.get(this.apiDir + "info/1");
   }
 
   login(newLogin: any): Observable<any> {
@@ -32,7 +32,7 @@ export class ConexionService {
 
   borrarEdu(id: any): Observable<any> {
     return this.http.delete(this.apiDir + "borrarEdu/" + id);
-  }  
+  }
 
   nuevoProy(proy: any): Observable<any> {
     return this.http.post(this.apiDir + "nuevo/proyecto", proy);
