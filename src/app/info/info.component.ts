@@ -18,17 +18,11 @@ export class InfoComponent implements OnInit {
   guardar() {    
     this.datos.datos.nombre = this.dato.nativeElement.textContent;
     this.conServ.guardarCambios(this.datos.datos).subscribe(data => {
-      alert("Sus datos fueron guardados en la base de datos");
+      alert("Su Nombre fue guardado");
     })
   }
 
-  ngOnInit(
-
-
-  ): void {
+  ngOnInit(): void {
 
   }
-
-
-
 }

@@ -4,9 +4,9 @@
         <div id="foto-cnt">                        
             <img id="foto" src={{archivo}} alt="foto">                        
             <div class="icon-cnt" *ngIf="datos.login">
-                <label for="sel-pic" id="lbl-icon"><img src="./assets/imagenes/Edit.png" id="icon" alt="icon select file"></label>
+                <label title="Selec Imagen" for="sel-pic" id="lbl-icon"><img src="./assets/imagenes/Edit.png" id="icon" alt="icon select file"></label>
                 <input type="file" id="sel-pic" (change)="capturarFile($event)" accept=".png, .jpg">
-                <button id="btn-icon" (click)="guardar()" #boton>            
+                <button title="Guardar imagen" id="btn-icon" (click)="guardar()" #boton>            
                     <img src="./assets/imagenes/save.png" id="icon" alt="save">    
                 </button>
             </div>                       

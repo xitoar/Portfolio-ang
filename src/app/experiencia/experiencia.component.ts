@@ -32,7 +32,7 @@ export class ExperienciaComponent implements OnInit {
     this.datos.datos.experiencia[item].comentario = this.dato3.get(item)?.nativeElement.textContent;
     this.conServ.nuevaExp(this.datos.datos.experiencia[item]).subscribe(data => {
       this.datos.datos.experiencia = data;
-      alert("Sus datos fueron guardados en la base de datos");
+      alert("Los datos de Experiencia "+this.datos.datos.experiencia[item].titulo+" fueron guardados");
     });
   }
 

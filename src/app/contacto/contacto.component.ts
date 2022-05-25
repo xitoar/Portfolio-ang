@@ -21,7 +21,7 @@ export class ContactoComponent implements OnInit {
     this.datos.datos.facebook = this.dato2.nativeElement.textContent;
     this.datos.datos.linkedin = this.dato3.nativeElement.textContent;
     this.conServ.guardarCambios(this.datos.datos).subscribe(data => {
-      alert("Sus datos fueron guardados en la base de datos");     
+      alert("Sus datos de Contacto fueron guardados");     
     })   
    
   }

@@ -27,7 +27,7 @@ export class ResumenComponent implements OnInit {
   guardar() {
     if (this.nuevaImg) {      
       this.conServ.guardarCambios(this.datos.datos).subscribe(data => {
-        alert("Sus datos fueron guardados en la base de datos");
+        alert("Sus Foto fue guarda");
       })
     } else {
       alert("No cargo foto nueva");
@@ -37,8 +37,7 @@ export class ResumenComponent implements OnInit {
   ngOnInit(): void {
     this.conServ.getData().subscribe(data => {
       this.datos.datos = data;
-      this.archivo = data.imagen;
-      
+      this.archivo = data.imagen;      
     });
   }
 

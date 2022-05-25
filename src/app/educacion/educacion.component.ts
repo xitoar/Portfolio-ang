@@ -19,6 +19,7 @@ export class EducacionComponent implements OnInit {
   
   personaId = { id : ""};
   edu = { id: "", titulo: "Ingrese nuevo titulo", subtitulo: "Ingrese nombre institución", comentario: "Ingrese comentarios adicionales", persona: {} };
+ 
 
   constructor(public datos: DatosService, public conServ: ConexionService) { }
   
@@ -36,7 +37,7 @@ export class EducacionComponent implements OnInit {
     this.datos.datos.educacion[item].comentario = this.dato3.get(item)?.nativeElement.textContent;     
     this.conServ.nuevaEdu(this.datos.datos.educacion[item]).subscribe(data => {
       this.datos.datos.educacion = data;
-      alert("Sus datos fueron guardados en la base de datos");      
+      alert("Los datos de Educacion "+this.datos.datos.educacion[item].titulo+" fueron guardados");      
     });
   } 
 
@@ -53,17 +54,7 @@ export class EducacionComponent implements OnInit {
       this.datos.datos.educacion[item].imagen = this.reader.result;      
       this.nuevaImg = true;      
     }    
-  }  
-
-  guardarImg(item: any){
-    if(this.nuevaImg){      
-      this.conServ.nuevaEdu(this.datos.datos.educacion[item]).subscribe(data => {
-        alert("Sus datos fueron guardados en la base de datos");            
-      })
-    } else {
-      alert("No cargo foto nueva");
-    }
-  }
+  }    
 
   ngOnInit(): void { }
 

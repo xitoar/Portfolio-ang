@@ -2,7 +2,7 @@
     <div class="info" *ngIf="datos.datos">
         <div class="h1-cnt">
             <h1 contentEditable={{datos.login}} #dato>{{datos.datos.nombre}}</h1>
-            <button id="btn-icon" (click)="guardar()" *ngIf="datos.login">
+            <button title="Guardar Cambios" id="btn-icon" (click)="guardar()" *ngIf="datos.login">
                 <img src="./assets/imagenes/save.png" id="icon" alt="save">
             </button>
         </div>

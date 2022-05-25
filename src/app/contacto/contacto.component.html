@@ -1,30 +1,27 @@
 <section>
     <div class="contacto" id="contacto">
-        <h2>Datos de contacto</h2>
+        <div class="h2-cnt">
+            <h2>Datos de contacto</h2>
+            <button title="Guardar Cambios" class="btn-icon" (click)="guardar()" *ngIf="datos.login">
+                <img src="./assets/imagenes/save.png" class="icon" alt="save">
+            </button>
+        </div>
         <ul *ngIf="datos.datos">
             <div class="li-cnt">
-                <li>Mail: 
+                <li>Mail:
                     <p #dato1 [contentEditable]="datos.login">{{datos.datos.mail}}</p>
                 </li>
-                <button class="btn-icon" (click)="guardar()" *ngIf="datos.login">
-                    <img src="./assets/imagenes/save.png" class="icon" alt="save">
-                </button>
             </div>
             <div class="li-cnt">
-                <li>Facebook: 
-                    <p #dato2 [contentEditable]="datos.login">{{datos.datos.facebook}}</p>
+                <li>
+                    <a href={{datos.datos.facebook}} target="_blank">Facebook</a>
+                    <p #dato2 *ngIf="datos.login" [contentEditable]="datos.login">{{datos.datos.facebook}}</p>
                 </li>
-                <button class="btn-icon" (click)="guardar()" *ngIf="datos.login">
-                    <img src="./assets/imagenes/save.png" class="icon" alt="save">
-                </button>
             </div>
             <div class="li-cnt">
-                <li>Linkedin: 
-                    <p #dato3 [contentEditable]="datos.login">{{datos.datos.linkedin}}</p>
+                <li><a href={{datos.datos.linkedin}} target="_blank">Linkedin</a>
+                    <p #dato3 *ngIf="datos.login" [contentEditable]="datos.login">{{datos.datos.linkedin}}</p>
                 </li>
-                <button class="btn-icon" (click)="guardar()" *ngIf="datos.login">
-                    <img src="./assets/imagenes/save.png" class="icon" alt="save">
-                </button>
             </div>
         </ul>
     </div>

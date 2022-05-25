@@ -16,6 +16,7 @@ li{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 h3{
     margin:0%;
@@ -37,14 +38,15 @@ h3{
     height: 30px;
     margin-left: 20px;
 }
-
-.icon-cnt{      
+.icon-cnt{         
     height: 20%;       
 }
 .sel-pic{
     display: none;    
 }
 #lbl-icon{
+    display: flex;
+    align-items: center;
     height: 50px;
     margin-left: 20px; 
 }

@@ -31,7 +31,7 @@ export class ProyectosComponent implements OnInit {
     this.datos.datos.proyectos[item].comentario = this.dato3.get(item)?.nativeElement.textContent;     
     this.conServ.nuevoProy(this.datos.datos.proyectos[item]).subscribe(data => {
       this.datos.datos.proyectos = data;
-      alert("Sus datos fueron guardados en la base de datos");      
+      alert("Los datos de Proyectos "+this.datos.datos.proyectos[item].titulo+" fueron guardados");      
     });
   } 
 
