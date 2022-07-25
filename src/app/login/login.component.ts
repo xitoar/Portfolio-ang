@@ -12,7 +12,7 @@ import { DatosService } from '../service/datos.service';
 })
 export class LoginComponent implements OnInit {
 
-  form: FormGroup;  
+  form: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private conServ: ConexionService, public datos: DatosService) {
 
@@ -22,11 +22,12 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  logear() {    
+  logear() {
     if (this.form.valid) {
-      this.conServ.login(this.form.value).subscribe(data => {        
-        this.datos.login = data;    
-        if (data == true) {
+      this.conServ.login(this.form.value).subscribe(data => {
+        if (data != null) {
+          this.datos.login = true;
+          localStorage.setItem("token", JSON.stringify(data));
           this.router.navigate(['/info']);
         } else {
           alert("Datos cargados erroneos")
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
       alert("Datos cargados incompletos")
     }
   }
-  
+
   ngOnInit(): void { }
 
 }

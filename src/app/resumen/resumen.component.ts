@@ -11,7 +11,7 @@ export class ResumenComponent implements OnInit {
 
   archivo: any = "./assets/imagenes/foto_gris.png";
   reader = new FileReader;
-  nuevaImg: boolean = false;  
+  nuevaImg: boolean = false;
 
   constructor(public conServ: ConexionService, public datos: DatosService) { }
 
@@ -25,9 +25,9 @@ export class ResumenComponent implements OnInit {
     }
   }
   guardar() {
-    if (this.nuevaImg) {      
+    if (this.nuevaImg) {
       this.conServ.guardarCambios(this.datos.datos).subscribe(data => {
-        alert("Sus Foto fue guarda");
+        alert("Su Foto fue guarda");
       })
     } else {
       alert("No cargo foto nueva");
@@ -37,7 +37,7 @@ export class ResumenComponent implements OnInit {
   ngOnInit(): void {
     this.conServ.getData().subscribe(data => {
       this.datos.datos = data;
-      this.archivo = data.imagen;      
+      this.archivo = data.imagen;
     });
   }
 

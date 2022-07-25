@@ -13,10 +13,10 @@ export class NavComponent implements OnInit {
 
   constructor(public datos: DatosService) { }
 
-  deslogear(){
-    if(this.datos.login){
-    this.datos.login = false;
-    console.log(this.datos.login);
+  deslogear() {
+    if (this.datos.login) {
+      localStorage.clear();
+      this.datos.login = false;
     }
   }
 

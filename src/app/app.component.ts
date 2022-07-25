@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DatosService } from './service/datos.service';
 
 
 @Component({
@@ -7,9 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent{
+export class AppComponent implements OnInit {
 
   title = 'portfolio-ang';
 
+  constructor(public datos: DatosService) { }
+
+  ngOnInit(): void {
+    if (localStorage.getItem("token") != null) {
+      this.datos.login = true;
+    }
+  }
 
 }
