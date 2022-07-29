@@ -37,7 +37,9 @@ export class ResumenComponent implements OnInit {
   ngOnInit(): void {
     this.conServ.getData().subscribe(data => {
       this.datos.datos = data;
-      this.archivo = data.imagen;
+      if (data.imagen != null) {
+        this.archivo = data.imagen;
+      }
     });
   }
 

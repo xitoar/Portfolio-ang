@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
           alert("Datos cargados erroneos")
         }
       });
+      ;
     } else {
       alert("Datos cargados incompletos")
     }
