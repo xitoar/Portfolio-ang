@@ -14,6 +14,7 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LoginComponent } from './login/login.component';
+import { BlandasComponent } from './blandas/blandas.component';
 
 
 
@@ -29,7 +30,8 @@ import { LoginComponent } from './login/login.component';
     ExperienciaComponent,
     ProyectosComponent,
     ContactoComponent,
-    LoginComponent
+    LoginComponent,
+    BlandasComponent
   ],
   imports: [
     BrowserModule,
