@@ -8,8 +8,8 @@ import { DatosService } from '../service/datos.service';
 })
 export class ConexionService {
 
-  //apiDir: string = "https://helios-portfolio-backend.herokuapp.com/";
-  apiDir: string = "http://localhost:8080/";
+  apiDir: string = "https://helios-portfolio-backend.herokuapp.com/";
+  //apiDir: string = "http://localhost:8080/";
 
 
 
