@@ -1,0 +1,57 @@
+section {
+    height: 50%;
+}
+.habilidades {    
+    border-radius: 10px;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;    
+}
+li{
+    display: flex;
+    flex-wrap: wrap;
+}
+.h3-cnt{
+    height: max-content;    
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+h3{
+    margin:0%;
+}
+.h4-cnt{
+    width: 100%;
+}
+.btn-icon {
+    height: 50px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    margin-left: 20px;    
+}
+.icon {
+    height: 50%;    
+}
+.img-hab {
+    height: 30px;
+    margin-left: 20px;
+}
+.icon-cnt{         
+    height: 20%;       
+}
+.sel-pic{
+    display: none;    
+}
+#lbl-icon{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin-left: 20px; 
+}
+#iconF{
+    cursor: pointer;     
+    height: 50%;
+}
+

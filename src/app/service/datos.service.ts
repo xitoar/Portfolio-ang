@@ -12,4 +12,8 @@ export class DatosService {
 
   constructor() {}
 
+  loginSet(dato: boolean){
+    this.login = dato;
+  }
+
 }
