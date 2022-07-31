@@ -1,1 +1,34 @@
-<p>blandas works!</p>
+<section>
+    <div class="habilidades" *ngIf="datos.datos">
+        <div class="h3-cnt">
+            <h2>Habilidades</h2>
+            <button title="Agregar Nuevo Item" class="btn-icon" (click)="nuevo()" *ngIf="datos.login">
+                <img src="./assets/imagenes/Edit.png" class="icon" alt="save">
+            </button>
+        </div>
+        <ul>
+            <li *ngFor="let item of datos.datos.datosBlandos; let indice=index">
+                <div class="h3-cnt">
+                    <h3 [contentEditable]="datos.login" #dato1>{{item.titulo}}</h3>
+                    <img class="img-hab" src={{item.imagen}} alt="logo" *ngIf="item.imagen; else elseBlock">
+                    <ng-template #elseBlock><img class="img-hab" src={{archivo}} alt="logo"></ng-template>
+                    <label title="Seleccionar Imagen" for={{item.id}} id="lbl-icon" *ngIf="datos.login">
+                        <img src="./assets/imagenes/Edit.png" id="iconF" alt="icon select file">
+                    </label>
+                    <input class="sel-pic" type="file" id={{item.id}} (change)="capturarFile($event, indice)"
+                        accept=".png, .jpg">
+                    <button title="Guardar Cambios" class="btn-icon" (click)="guardar(indice)" *ngIf="datos.login">
+                        <img src="./assets/imagenes/save.png" class="icon" alt="guardarImg">
+                    </button>
+                    <button title="Borrar Item" class="btn-icon" (click)="borrar(indice)" *ngIf="datos.login">
+                        <img src="./assets/imagenes/del.png" class="icon" alt="borrar">
+                    </button>
+                </div>
+                <div class="h4-cnt">
+                    <h4 #dato2 [contentEditable]="datos.login">{{item.subtitulo}}</h4>
+                </div>
+                <p #dato3 [contentEditable]="datos.login">{{item.comentario}}</p>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,6 +1,7 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { Component, OnInit, } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ConexionService } from '../service/conexion.service';
 import { DatosService } from '../service/datos.service';
@@ -19,22 +20,17 @@ export class LoginComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       usuario: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(4)]]
     })
   }
 
   logear() {
     if (this.form.valid) {
-      this.conServ.login(this.form.value).subscribe(data => {
-        if (data != null) {
-          this.datos.login = true;
-          localStorage.setItem("token", JSON.stringify(data));
-          this.router.navigate(['/info']);
-        } else {
-          alert("Datos cargados erroneos")
-        }
+      this.conServ.login(this.form.value).subscribe(data => {        
+        this.datos.login = true;
+        localStorage.setItem("token", JSON.stringify(data));
+        this.router.navigate(['/info']);
       });
-      ;
     } else {
       alert("Datos cargados incompletos")
     }
@@ -42,4 +38,4 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void { }
 
-}
+} 
