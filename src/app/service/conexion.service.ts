@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ConexionService {
 
-  apiDir: string = "https://helioshorfoliohackend.herokuapp.com/";
+  apiDir: string = "https://portfolio-backend-vsfb.onrender.com";
   //apiDir: string = "http://localhost:8080/";
   
 
